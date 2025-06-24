@@ -1,0 +1,20 @@
+meta {
+  name: call gh workflow
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://api.github.com/repos/loiaconof/template-repo-automation/actions/workflows/init.yml/dispatches
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{GITHUB_TOKEN}}
+  Accept: application/vnd.github+json
+}
+
+body:json {
+  {"ref":"main"}
+}

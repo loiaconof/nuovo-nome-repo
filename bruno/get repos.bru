@@ -1,0 +1,15 @@
+meta {
+  name: get repos
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://api.github.com/user/repos
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer {{GITHUB_TOKEN}}
+}
